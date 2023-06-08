@@ -20,6 +20,7 @@ nlu:
       - Hi
       - Hi there
       - Good evening
+      - Hello
   - intent: goodbye
     examples: |
       - cu
@@ -81,9 +82,28 @@ nlu:
       - no no
   - intent: order
     examples: |
-      - Hi, I want to order a pizza
-      - I want pizza
+      - Hi, I want to order a [large](pizza_size) pizza
+      - I want a [small](pizza_size) pizza
       - I want to make an order
-      - Order a pizza
+      - Order a [medium](pizza_size) pizza
       - Hey, I want some pizza
-      - Order pizzza
+      - Order [big](pizza_size) pizzza
+      - Yes, I want a [large](pizza_size) pizza
+      - I want a [medium](pizza_size) pizza
+  - intent: multi_order
+    examples: |
+      - I want two pizzas: a big and a small one
+      - Order 2 small and 1 large pizza
+  - synonym: large
+    examples: |
+      - big
+  - regex: large
+    examples: |
+      - \bbig\b
+      - \blarge\b
+  - regex: medium
+    examples: |
+      - \bmedium\b
+  - regex: small
+    examples: |
+      - \bsmall\b

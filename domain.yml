@@ -4,8 +4,11 @@ intents:
   - bot_challenge
   - goodbye
   - greet
+  - multi_order
   - order
   - refuse
+entities:
+  - pizza_size
 responses:
   utter_greet:
     - text: Hey! Do you want some pizza?
@@ -24,6 +27,8 @@ responses:
     - text: Great! Let me fill in order details.
     - text: Good! Let me fill in order details.
     - text: Excellent! Let me fill in order details.
+  utter_multi_order:
+    - text: Please, specify a single order at a time, so things don't get messed up.
   utter_refuse_order:
     - text: Sure, text me if you change your mind
     - text: Okay, I'll be waiting you back
@@ -35,4 +40,5 @@ actions:
   - utter_greet
   - utter_goodbye
   - utter_iamabot
+  - utter_multi_order
   - utter_refuse_order

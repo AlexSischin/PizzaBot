@@ -16,3 +16,8 @@ rules:
     steps:
       - intent: bot_challenge
       - action: utter_iamabot
+
+  - rule: Ask to specify a single order at a time
+    steps:
+      - intent: multi_order
+      - action: utter_multi_order
