@@ -3,31 +3,24 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
   - bot_challenge
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
+  - text: "Hey! I'm Alex, an AI assistant. Do you want some pizza?"
+  - text: "Hi! I'm Alex, an AI assistant. You seem to want pizza, am I right?"
+  - text: "Hello! I'm Alex, an AI assistant. If you want pizza, I would be happy to help!"
+  - text: "Hi! I'm Alex, an AI assistant. I have some awesome pizza, do you want some?"
+  - text: "Hey! I'm Alex, an AI assistant. I would be happy to help you order some pizza!"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Bye!"
+  - text: "Bye-bye!"
+  - text: "Cheers!"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "I am an AI assistant, and my purpose is to provide humans with pizza."
+  - text: "I am an AI assistant and unfortunately, I can't eat pizza, but I can give you some!"
 
 session_config:
   session_expiration_time: 60
