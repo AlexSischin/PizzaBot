@@ -2,14 +2,34 @@ version: "3.1"
 
 stories:
 
-- story: hi
-  steps:
-  - intent: greet
-  - action: utter_greet
+  - story: hi
+    steps:
+      - intent: greet
+      - action: utter_greet
 
-- story: hi and bye
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: goodbye
-  - action: utter_goodbye
+  - story: hi and bye
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: affirm order
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: affirm
+      - action: utter_begin_order
+
+  - story: refuse order
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: refuse
+      - action: utter_refuse_order
+      - action: action_restart
+
+  - story: begin order
+    steps:
+      - intent: order
+      - action: utter_begin_order

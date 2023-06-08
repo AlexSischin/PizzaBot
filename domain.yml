@@ -1,27 +1,38 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - greet
-  - goodbye
+  - affirm
   - bot_challenge
-
+  - goodbye
+  - greet
+  - order
+  - refuse
 responses:
   utter_greet:
-  - text: "Hey! I'm Alex, an AI assistant. Do you want some pizza?"
-  - text: "Hi! I'm Alex, an AI assistant. You seem to want pizza, am I right?"
-  - text: "Hello! I'm Alex, an AI assistant. If you want pizza, I would be happy to help!"
-  - text: "Hi! I'm Alex, an AI assistant. I have some awesome pizza, do you want some?"
-  - text: "Hey! I'm Alex, an AI assistant. I would be happy to help you order some pizza!"
-
+    - text: Hey! Do you want some pizza?
+    - text: Hi! You seem to want pizza, am I right?
+    - text: Hello! Do you want to order pizza?
+    - text: Hi! Would you like to order a pizza?
+    - text: Hey! Do you want to place an order for pizza?
   utter_goodbye:
-  - text: "Bye!"
-  - text: "Bye-bye!"
-  - text: "Cheers!"
-
+    - text: Bye
+    - text: Bye-bye
+    - text: Cheers
   utter_iamabot:
-  - text: "I am an AI assistant, and my purpose is to provide humans with pizza."
-  - text: "I am an AI assistant and unfortunately, I can't eat pizza, but I can give you some!"
-
+    - text: I am an AI assistant, and my purpose is to provide humans with pizza
+    - text: I am an AI assistant and unfortunately, I can't eat pizza, but I can give you some!
+  utter_begin_order:
+    - text: Great! Let me fill in order details.
+    - text: Good! Let me fill in order details.
+    - text: Excellent! Let me fill in order details.
+  utter_refuse_order:
+    - text: Sure, text me if you change your mind
+    - text: Okay, I'll be waiting you back
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+actions:
+  - utter_begin_order
+  - utter_greet
+  - utter_goodbye
+  - utter_iamabot
+  - utter_refuse_order

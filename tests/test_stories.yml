@@ -4,34 +4,64 @@ version: "3.1"
 
 stories:
 
-- story: hi
-  steps:
-    - user: |
-        Hi, how are you doing?
-      intent: greet
-    - action: utter_greet
+  - story: hi
+    steps:
+      - user: |
+          Hi, how are you doing?
+        intent: greet
+      - action: utter_greet
 
-- story: bye
-  steps:
-  - user: |
-      bye-bye!
-    intent: goodbye
-  - action: utter_goodbye
+  - story: bye
+    steps:
+      - user: |
+          bye-bye!
+        intent: goodbye
+      - action: utter_goodbye
 
-- story: hi then bye
-  steps:
-  - user: |
-      hello there!
-    intent: greet
-  - action: utter_greet
-  - user: |
-      Nah, bye
-    intent: goodbye
-  - action: utter_goodbye
+  - story: hi then bye
+    steps:
+      - user: |
+          hello there!
+        intent: greet
+      - action: utter_greet
+      - user: |
+          Nah, bye
+        intent: goodbye
+      - action: utter_goodbye
 
-- story: bot challenge
-  steps:
-  - user: |
-      are you a bot?
-    intent: bot_challenge
-  - action: utter_iamabot
+  - story: bot challenge
+    steps:
+      - user: |
+          are you a bot?
+        intent: bot_challenge
+      - action: utter_iamabot
+
+  - story: affirm order
+    steps:
+      - user: |
+          Hi
+        intent: greet
+      - action: utter_greet
+      - user: |
+          Yes, please
+        intent: affirm
+      - action: utter_begin_order
+
+  - story: refuse order
+    steps:
+      - user: |
+          Hello
+        intent: greet
+      - action: utter_greet
+      - user: |
+          Nope, thanks
+        intent: refuse
+      - action: utter_refuse_order
+      - action: action_restart
+
+  - story: begin order
+    steps:
+      - user: |
+          Hi, I want a pizza
+        intent: order
+      - action: utter_begin_order

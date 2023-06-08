@@ -1,60 +1,89 @@
 version: "3.1"
-
 nlu:
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-    - hi, how are you doing?
-
-- intent: goodbye
-  examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
-    - cheers
-
-#- intent: affirm
-#  examples: |
-#    - yes
-#    - y
-#    - indeed
-#    - of course
-#    - that sounds good
-#    - correct
-
-#- intent: deny
-#  examples: |
-#    - no
-#    - n
-#    - never
-#    - I don't think so
-#    - don't like that
-#    - no way
-#    - not really
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-    - who are you?
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+      - hi, how are you doing?
+      - hi, wats up?
+      - hey, wassup?
+      - Hi
+      - Hi there
+      - Good evening
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+      - cheers
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+      - who are you?
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+      - absolutely
+      - that would be great
+      - yep
+      - Yep
+      - Yes, indeed
+      - ofcourse
+      - yeah
+      - let's go
+      - proceed
+      - affirmative
+  - intent: refuse
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - not this
+      - I don't like this
+      - no way
+      - not really
+      - nah
+      - no, thanks
+      - meh
+      - Nevermind
+      - nope
+      - absolutely no
+      - I don't
+      - I do not
+      - i do not think so
+      - no no
+  - intent: order
+    examples: |
+      - Hi, I want to order a pizza
+      - I want pizza
+      - I want to make an order
+      - Order a pizza
+      - Hey, I want some pizza
+      - Order pizzza
