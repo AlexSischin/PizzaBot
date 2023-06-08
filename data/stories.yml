@@ -2,12 +2,12 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: hi
   steps:
   - intent: greet
   - action: utter_greet
 
-- story: happy path 2
+- story: hi and bye
   steps:
   - intent: greet
   - action: utter_greet
