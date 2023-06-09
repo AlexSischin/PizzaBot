@@ -71,17 +71,8 @@ stories:
 
   - story: order begin 7
     steps:
-      - intent: goodbye
       - intent: greet
       - action: utter_greet
-      - intent: order
-        entities:
-          - pizza_size: large
-          - pizza_crust: thick
-          - pizza_topping: canadian
-          - pizza_topping: bacon
-          - pizza_topping: black olives
-          - pizza_topping: cheese
       - intent: order
         entities:
           - pizza_size: large
