@@ -114,10 +114,14 @@ nlu:
       - I'd like a [large](pizza_size) pizza with no toppings, please.
       - Can I get a [medium](pizza_size) pizza with a [thick](pizza_crust) crust and no toppings?
       - Cheers, I want a [small](pizza_size) pizza with [onion]{"entity": "pizza_topping", "value": "onions"} and [sausage](pizza_topping)
+      - Absolutely. I want a [big]{"entity": "pizza_size", "value": "large"}, [thick](pizza_crust) pizza with [canadian bacon]{"entity": "pizza_topping", "value": "ham"}, [olives]{"entity": "pizza_topping", "value": "black olives"} and [cheese](pizza_topping)
   - intent: multi_order
     examples: |
       - I want two pizzas: a big and a small one
       - Order 2 small and 1 large pizza
+  - synonym: onions
+    examples: |
+      - onion
   - synonym: large
     examples: |
       - big
@@ -129,9 +133,6 @@ nlu:
       - green peppers
       - bell peppers
       - peppers
-  - synonym: onions
-    examples: |
-      - onion
   - synonym: black olives
     examples: |
       - olives

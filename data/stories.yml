@@ -68,3 +68,25 @@ stories:
           - pizza_topping: onions
           - pizza_topping: sausage
       - action: utter_begin_order
+
+  - story: interactive_story_1
+    steps:
+      - intent: goodbye
+      - intent: greet
+      - action: utter_greet
+      - intent: order
+        entities:
+          - pizza_size: large
+          - pizza_crust: thick
+          - pizza_topping: canadian
+          - pizza_topping: bacon
+          - pizza_topping: black olives
+          - pizza_topping: cheese
+      - intent: order
+        entities:
+          - pizza_size: large
+          - pizza_crust: thick
+          - pizza_topping: ham
+          - pizza_topping: black olives
+          - pizza_topping: cheese
+      - action: utter_begin_order
