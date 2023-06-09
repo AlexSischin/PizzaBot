@@ -59,6 +59,35 @@ nlu:
       - let's go
       - proceed
       - affirmative
+      - sure thing
+      - definitely
+      - without a doubt
+      - by all means
+      - sure
+      - let's do it
+      - right on
+      - you bet
+      - undoubtedly
+      - agreed
+      - absolutely yes
+      - sounds perfect
+      - let's proceed
+      - exactly
+      - that's correct
+      - that's right
+      - you got it
+      - go ahead
+      - that's true
+      - I agree
+      - most certainly
+      - positively
+      - sure enough
+      - I confirm
+      - totally
+      - for sure
+      - please do
+      - count me in
+
   - intent: refuse
     examples: |
       - no
