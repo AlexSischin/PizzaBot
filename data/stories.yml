@@ -69,7 +69,7 @@ stories:
           - pizza_topping: sausage
       - action: utter_begin_order
 
-  - story: interactive_story_1
+  - story: order begin 7
     steps:
       - intent: goodbye
       - intent: greet
