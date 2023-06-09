@@ -59,3 +59,12 @@ stories:
           - pizza_size: medium
           - pizza_crust: thin
       - action: utter_begin_order
+
+  - story: order begin 6
+    steps:
+      - intent: order
+        entities:
+          - pizza_size: small
+          - pizza_topping: onions
+          - pizza_topping: sausage
+      - action: utter_begin_order

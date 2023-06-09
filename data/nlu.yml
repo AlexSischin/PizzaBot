@@ -92,6 +92,28 @@ nlu:
       - I want a [medium](pizza_size) sized, [thick](pizza_crust) pizza
       - yep, I want a [thick](pizza_crust) [large](pizza_size) pizza
       - Yes, please. A [large](pizza_size) [thin](pizza_crust) pizza
+      - I want a [large](pizza_size) with [pepperoni](pizza_topping) and [cheese](pizza_topping)
+      - Order a pizza with [sausage](pizza_topping), [onions](pizza_topping) and [black olives]
+      - Yep. Give me please a [small](pizza_size) [peperoni](pizza_topping) pizza
+      - Sure, order a pizza with [ham](pizza_topping) and [green bell peppers](pizza_topping) on top of it
+      - I want some [pepperoni](pizza_topping) pizza with [mushrooms](pizza_topping) and [pineapple](pizza_topping)
+      - I'd like a [large](pizza_size) pizza with [pepperoni](pizza_topping), please.
+      - Can I get a [medium](pizza_size) pizza with [onions](pizza_topping) and [green peppers](pizza_topping)?
+      - I want a [small](pizza_size) pizza with a [thick](pizza_crust) crust and [black olives](pizza_topping).
+      - Could I order a [large](pizza_size) pizza with [pineapple](pizza_topping) and [canadian bacon](pizza_topping)?
+      - I'm craving a [medium](pizza_size) pizza with a [thin](pizza_crust) crust and [bacon](pizza_topping).
+      - Can I have a [large](pizza_size) pizza with [green olives](pizza_topping)?
+      - I'd like a [medium](pizza_size) pizza with a [thick](pizza_crust) crust, [pepperoni](pizza_topping), [bacon](pizza_topping), and [sausage](pizza_topping).
+      - Could I have a [big](pizza_size) pizza with [bell peppers](pizza_topping) and [olives](pizza_topping)?
+      - I want a [medium](pizza_size) pizza with a [thin](pizza_crust) crust, [canadian bacon](pizza_topping), and [pineapple](pizza_topping).
+      - Please give me a [large](pizza_size) pizza with just [cheese](pizza_topping).
+      - Can I order a [small](pizza_size) pizza with a [thick](pizza_crust) crust and [pepperoni](pizza_topping)?
+      - I'd like a [big](pizza_size) pizza with [sausage](pizza_topping) and [onion](pizza_topping).
+      - Can I have a [medium](pizza_size) pizza with a [thin](pizza_crust) crust and [mushroom](pizza_topping)?
+      - I'd like to get a [small](pizza_size) pizza with [green peppers](pizza_topping) and [pineapple](pizza_topping).
+      - I'd like a [large](pizza_size) pizza with no toppings, please.
+      - Can I get a [medium](pizza_size) pizza with a [thick](pizza_crust) crust and no toppings?
+      - Cheers, I want a [small](pizza_size) pizza with [onion]{"entity": "pizza_topping", "value": "onions"} and [sausage](pizza_topping)
   - intent: multi_order
     examples: |
       - I want two pizzas: a big and a small one
@@ -99,6 +121,23 @@ nlu:
   - synonym: large
     examples: |
       - big
+  - synonym: mushrooms
+    examples: |
+      - mushroom
+  - synonym: green bell peppers
+    examples: |
+      - green peppers
+      - bell peppers
+      - peppers
+  - synonym: onions
+    examples: |
+      - onion
+  - synonym: black olives
+    examples: |
+      - olives
+  - synonym: ham
+    examples: |
+      - canadian bacon
   - lookup: pizza_size
     examples: |
       - large
@@ -108,3 +147,16 @@ nlu:
     examples: |
       - thin
       - thick
+  - lookup: pizza_topping
+    examples: |
+      - pepperoni
+      - sausage
+      - mushrooms
+      - green bell peppers
+      - onions
+      - black olives
+      - green olives
+      - bacon
+      - pineapple
+      - ham
+      - cheese

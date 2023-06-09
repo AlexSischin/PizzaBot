@@ -8,8 +8,9 @@ intents:
   - order
   - refuse
 entities:
-  - pizza_crust
   - pizza_size
+  - pizza_topping
+  - pizza_crust
 responses:
   utter_greet:
     - text: Hey! Do you want some pizza?
