@@ -8,6 +8,7 @@ intents:
   - order
   - refuse
 entities:
+  - pizza_crust
   - pizza_size
 responses:
   utter_greet:

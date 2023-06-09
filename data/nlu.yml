@@ -82,14 +82,16 @@ nlu:
       - no no
   - intent: order
     examples: |
-      - Hi, I want to order a [large](pizza_size) pizza
+      - Hi, I want to order a [large](pizza_size) pizza with a [thin](pizza_crust) crust
       - I want a [small](pizza_size) pizza
       - I want to make an order
       - Order a [medium](pizza_size) pizza
-      - Hey, I want some pizza
+      - Hey, I want some [thick](pizza_crust) crust pizza
       - Order [big](pizza_size) pizzza
-      - Yes, I want a [large](pizza_size) pizza
-      - I want a [medium](pizza_size) pizza
+      - Yes, I want a [large](pizza_size) [thin](pizza_crust) pizza
+      - I want a [medium](pizza_size) sized, [thick](pizza_crust) pizza
+      - yep, I want a [thick](pizza_crust) [large](pizza_size) pizza
+      - Yes, please. A [large](pizza_size) [thin](pizza_crust) pizza
   - intent: multi_order
     examples: |
       - I want two pizzas: a big and a small one
@@ -97,13 +99,12 @@ nlu:
   - synonym: large
     examples: |
       - big
-  - regex: large
+  - lookup: pizza_size
     examples: |
-      - \bbig\b
-      - \blarge\b
-  - regex: medium
+      - large
+      - medium
+      - small
+  - lookup: pizza_crust
     examples: |
-      - \bmedium\b
-  - regex: small
-    examples: |
-      - \bsmall\b
+      - thin
+      - thick

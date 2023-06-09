@@ -9,13 +9,6 @@ stories:
       - intent: goodbye
       - action: utter_goodbye
 
-  - story: order begin 1
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: affirm
-      - action: utter_begin_order
-
   - story: order refuse 1
     steps:
       - intent: greet
@@ -23,6 +16,13 @@ stories:
       - intent: refuse
       - action: utter_refuse_order
       - action: action_restart
+
+  - story: order begin 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: affirm
+      - action: utter_begin_order
 
   - story: order begin 2
     steps:
@@ -38,4 +38,24 @@ stories:
       - intent: order
         entities:
           - pizza_size: medium
+      - action: utter_begin_order
+
+  - story: order begin 4
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: order
+        entities:
+          - pizza_crust: thick
+          - pizza_size: large
+      - action: utter_begin_order
+
+  - story: order begin 5
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: order
+        entities:
+          - pizza_size: medium
+          - pizza_crust: thin
       - action: utter_begin_order
