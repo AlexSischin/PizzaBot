@@ -36,17 +36,6 @@ stories:
         intent: bot_challenge
       - action: utter_iamabot
 
-  - story: affirm order
-    steps:
-      - user: |
-          Hi
-        intent: greet
-      - action: utter_greet
-      - user: |
-          Yes, please
-        intent: affirm
-      - action: utter_begin_order
-
   - story: refuse order
     steps:
       - user: |
@@ -59,9 +48,38 @@ stories:
       - action: utter_refuse_order
       - action: action_restart
 
-  - story: begin order
+  - story: begin order 1
     steps:
       - user: |
           Hi, I want a pizza
+        intent: order
+      - action: utter_begin_order
+
+  - story: begin order 2
+    steps:
+      - user: |
+          Hi, I want a [small](pizza_size) pizza with [onion](pizza_topping) and [cheese](pizza_topping)
+        intent: order
+      - action: utter_begin_order
+
+  - story: begin order 3
+    steps:
+      - user: |
+          Hi
+        intent: greet
+      - action: utter_greet
+      - user: |
+          Yes, please
+        intent: affirm
+      - action: utter_begin_order
+
+  - story: begin order 4
+    steps:
+      - user: |
+          Hello
+        intent: greet
+      - action: utter_greet
+      - user: |
+          Yes, with [olives](pizza_topping), please.
         intent: order
       - action: utter_begin_order
