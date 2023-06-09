@@ -80,6 +80,6 @@ stories:
         intent: greet
       - action: utter_greet
       - user: |
-          Yes, with [olives](pizza_topping), please.
+          Yes, with [olives]{"entity": "pizza_topping", "value": "black olives"}, please.
         intent: order
       - action: utter_begin_order
