@@ -84,17 +84,17 @@ nlu:
     examples: |
       - Hi, I want to order a [large](pizza_size) pizza with a [thin](pizza_crust) crust
       - I want a [small](pizza_size) pizza
-      - I want to make an order
+      - I want to make an order.
       - Order a [medium](pizza_size) pizza
       - Hey, I want some [thick](pizza_crust) crust pizza
       - Order [big](pizza_size) pizzza
-      - Yes, I want a [large](pizza_size) [thin](pizza_crust) pizza
+      - Yes, I want a [large](pizza_size) [thin](pizza_crust) pizza.
       - I want a [medium](pizza_size) sized, [thick](pizza_crust) pizza
       - yep, I want a [thick](pizza_crust) [large](pizza_size) pizza
-      - Yes, please. A [large](pizza_size) [thin](pizza_crust) pizza
+      - Yes, please. A [large](pizza_size) [thin](pizza_crust) pizza.
       - I want a [large](pizza_size) with [pepperoni](pizza_topping) and [cheese](pizza_topping)
       - Order a pizza with [sausage](pizza_topping), [onions](pizza_topping) and [black olives]
-      - Yep. Give me please a [small](pizza_size) [peperoni](pizza_topping) pizza
+      - Yep. Give me please a [small](pizza_size) [peperoni](pizza_topping) pizza.
       - Sure, order a pizza with [ham](pizza_topping) and [green bell peppers](pizza_topping) on top of it
       - I want some [pepperoni](pizza_topping) pizza with [mushrooms](pizza_topping) and [pineapple](pizza_topping)
       - I'd like a [large](pizza_size) pizza with [pepperoni](pizza_topping), please.
@@ -115,6 +115,16 @@ nlu:
       - Can I get a [medium](pizza_size) pizza with a [thick](pizza_crust) crust and no toppings?
       - Cheers, I want a [small](pizza_size) pizza with [onion]{"entity": "pizza_topping", "value": "onions"} and [sausage](pizza_topping)
       - Absolutely. I want a [big]{"entity": "pizza_size", "value": "large"}, [thick](pizza_crust) pizza with [canadian bacon]{"entity": "pizza_topping", "value": "ham"}, [olives]{"entity": "pizza_topping", "value": "black olives"} and [cheese](pizza_topping)
+      - Yea, get me a [large](pizza_size) one, [thin](pizza_crust) crust with [sausage](pizza_topping) and [onions](pizza_topping)
+      - Can I have a [medium](pizza_size) pizza? The [thick](pizza_crust) crust type and with [pepperoni](pizza_topping), please
+      - I guess I'll take a [big]{"entity": "pizza_size", "value": "large"} pizza, [thin](pizza_crust) crust with [canadian bacon]{"entity": "pizza_topping", "value": "ham"} and [cheese](pizza_topping)
+      - I'll have the [medium](pizza_size) pizza, [thick](pizza_crust) crust with [green peppers](pizza_topping) and [olives]{"entity": "pizza_topping", "value": "black olives"}
+      - um, a [small](pizza_size) [thick](pizza_crust) pizza with [onion](pizza_topping) and [mushroom](pizza_topping), please
+      - Sure thing, a [big]{"entity": "pizza_size", "value": "large"} [thin](pizza_crust) pizza with [pepperoni](pizza_topping) and [cheese](pizza_topping)
+      - Yeah... let's do a [medium](pizza_size) [thick](pizza_crust) pizza with [bacon](pizza_topping) and [pineapple](pizza_topping)
+      - I'll take a [large](pizza_size), [thin](pizza_crust) pizza with [onion](pizza_topping) and [green olives](pizza_topping)
+      - Can I get a [small](pizza_size) pizza, [thick](pizza_crust) crust with [mushroom](pizza_topping) and [cheese](pizza_topping)?
+      - Maybe a [big]{"entity": "pizza_size", "value": "large"} pizza, [thin](pizza_crust) crust with [canadian bacon]{"entity": "pizza_topping", "value": "ham"}, [peppers]{"entity": "pizza_topping", "value": "green bell peppers"} and [olives]{"entity": "pizza_topping", "value": "black olives"}
   - intent: multi_order
     examples: |
       - I want two pizzas: a big and a small one
