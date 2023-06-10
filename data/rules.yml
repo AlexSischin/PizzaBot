@@ -23,6 +23,14 @@ rules:
       - intent: multi_order
       - action: utter_multi_order
 
+  - rule: Say hi and activate pizza form when customer asks for an order
+    conversation_start: true
+    steps:
+      - intent: order
+      - action: utter_greet
+      - action: pizza_form
+      - active_loop: pizza_form
+
   - rule: Activate pizza form
     steps:
       - intent: order
