@@ -2,10 +2,11 @@ version: "3.1"
 
 rules:
 
-  - rule: Say hi anytime the user says hi
+  - rule: Say hi and propose help anytime customer says hi
     steps:
       - intent: greet
       - action: utter_greet
+      - action: utter_propose_help
 
   - rule: Say goodbye anytime the user says goodbye
     steps:
@@ -21,3 +22,19 @@ rules:
     steps:
       - intent: multi_order
       - action: utter_multi_order
+
+  - rule: Activate pizza form
+    steps:
+      - intent: order
+      - action: pizza_form
+      - active_loop: pizza_form
+
+  - rule: Deactivate pizza form
+    condition:
+      - active_loop: pizza_form
+    steps:
+      - action: pizza_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: utter_submit

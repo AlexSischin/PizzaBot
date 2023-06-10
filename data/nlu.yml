@@ -87,7 +87,7 @@ nlu:
       - for sure
       - please do
       - count me in
-
+      - Yes
   - intent: refuse
     examples: |
       - no
@@ -154,6 +154,10 @@ nlu:
       - I'll take a [large](pizza_size), [thin](pizza_crust) pizza with [onion](pizza_topping) and [green olives](pizza_topping)
       - Can I get a [small](pizza_size) pizza, [thick](pizza_crust) crust with [mushroom](pizza_topping) and [cheese](pizza_topping)?
       - Maybe a [big]{"entity": "pizza_size", "value": "large"} pizza, [thin](pizza_crust) crust with [canadian bacon]{"entity": "pizza_topping", "value": "ham"}, [peppers]{"entity": "pizza_topping", "value": "green bell peppers"} and [olives]{"entity": "pizza_topping", "value": "black olives"}
+      - I want to order a pizza
+      - [Large]{"entity": "pizza_size", "value": "large"}
+      - [Thin]{"entity": "pizza_crust", "value": "thin"}
+      - [Pepperoni]{"entity": "pizza_topping", "value": "pepperoni"}, [onions](pizza_topping) and [cheese](pizza_topping)
   - intent: multi_order
     examples: |
       - I want two pizzas: a big and a small one
@@ -164,20 +168,20 @@ nlu:
   - synonym: large
     examples: |
       - big
-  - synonym: mushrooms
-    examples: |
-      - mushroom
-  - synonym: green bell peppers
-    examples: |
-      - green peppers
-      - bell peppers
-      - peppers
-  - synonym: black olives
-    examples: |
-      - olives
   - synonym: ham
     examples: |
       - canadian bacon
+  - synonym: black olives
+    examples: |
+      - olives
+  - synonym: green bell peppers
+    examples: |
+      - peppers
+      - green peppers
+      - bell peppers
+  - synonym: mushrooms
+    examples: |
+      - mushroom
   - lookup: pizza_size
     examples: |
       - large

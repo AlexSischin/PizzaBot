@@ -6,78 +6,59 @@ stories:
     steps:
       - intent: greet
       - action: utter_greet
+      - action: utter_propose_help
       - intent: goodbye
       - action: utter_goodbye
 
-  - story: order refuse 1
+  - story: order refuse
     steps:
       - intent: greet
       - action: utter_greet
+      - action: utter_propose_help
       - intent: refuse
       - action: utter_refuse_order
       - action: action_restart
 
-  - story: order begin 1
+  - story: successful order 1
     steps:
       - intent: greet
       - action: utter_greet
-      - intent: affirm
-      - action: utter_begin_order
-
-  - story: order begin 2
-    steps:
-      - intent: greet
-      - action: utter_greet
+      - action: utter_propose_help
+      - intent: order
+      - action: pizza_form
+      - active_loop: pizza_form
+      - slot_was_set:
+          - requested_slot: pizza_size
       - intent: order
         entities:
           - pizza_size: large
-      - action: utter_begin_order
-
-  - story: order begin 3
-    steps:
-      - intent: order
-        entities:
-          - pizza_size: medium
-      - action: utter_begin_order
-
-  - story: order begin 4
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: order
-        entities:
-          - pizza_crust: thick
+      - slot_was_set:
           - pizza_size: large
-      - action: utter_begin_order
-
-  - story: order begin 5
-    steps:
-      - intent: greet
-      - action: utter_greet
+      - action: pizza_form
+      - slot_was_set:
+          - requested_slot: pizza_crust
       - intent: order
         entities:
-          - pizza_size: medium
           - pizza_crust: thin
-      - action: utter_begin_order
-
-  - story: order begin 6
-    steps:
+      - slot_was_set:
+          - pizza_crust: thin
+      - action: pizza_form
+      - slot_was_set:
+          - requested_slot: pizza_toppings
       - intent: order
         entities:
-          - pizza_size: small
+          - pizza_topping: pepperoni
           - pizza_topping: onions
-          - pizza_topping: sausage
-      - action: utter_begin_order
-
-  - story: order begin 7
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: order
-        entities:
-          - pizza_size: large
-          - pizza_crust: thick
-          - pizza_topping: ham
-          - pizza_topping: black olives
           - pizza_topping: cheese
-      - action: utter_begin_order
+      - slot_was_set:
+          - pizza_toppings:
+              - pepperoni
+              - onions
+              - cheese
+      - action: pizza_form
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: utter_submit
+      - intent: affirm
+      - action: utter_complete_order

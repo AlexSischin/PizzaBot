@@ -10,6 +10,7 @@ stories:
           Hi, how are you doing?
         intent: greet
       - action: utter_greet
+      - action: utter_propose_help
 
   - story: bye
     steps:
@@ -24,6 +25,7 @@ stories:
           hello there!
         intent: greet
       - action: utter_greet
+      - action: utter_propose_help
       - user: |
           Nah, bye
         intent: goodbye
@@ -42,44 +44,9 @@ stories:
           Hello
         intent: greet
       - action: utter_greet
+      - action: utter_propose_help
       - user: |
           Nope, thanks
         intent: refuse
       - action: utter_refuse_order
       - action: action_restart
-
-  - story: begin order 1
-    steps:
-      - user: |
-          Hi, I want a pizza
-        intent: order
-      - action: utter_begin_order
-
-  - story: begin order 2
-    steps:
-      - user: |
-          Hi, I want a [small](pizza_size) pizza with [onion](pizza_topping) and [cheese](pizza_topping)
-        intent: order
-      - action: utter_begin_order
-
-  - story: begin order 3
-    steps:
-      - user: |
-          Hi
-        intent: greet
-      - action: utter_greet
-      - user: |
-          Yes, please
-        intent: affirm
-      - action: utter_begin_order
-
-  - story: begin order 4
-    steps:
-      - user: |
-          Hello
-        intent: greet
-      - action: utter_greet
-      - user: |
-          Yes, with [olives]{"entity": "pizza_topping", "value": "black olives"}, please.
-        intent: order
-      - action: utter_begin_order
