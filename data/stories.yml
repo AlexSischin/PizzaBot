@@ -62,3 +62,80 @@ stories:
       - action: utter_submit
       - intent: affirm
       - action: utter_complete_order
+
+  - story: successful order 2
+    steps:
+      - intent: order
+      - action: utter_greet
+      - action: pizza_form
+      - active_loop: pizza_form
+      - slot_was_set:
+          - requested_slot: pizza_size
+      - intent: order
+        entities:
+          - pizza_size: medium
+      - slot_was_set:
+          - pizza_size: medium
+      - action: pizza_form
+      - slot_was_set:
+          - requested_slot: pizza_crust
+      - intent: order
+        entities:
+          - pizza_crust: thick
+      - slot_was_set:
+          - pizza_crust: thick
+      - action: pizza_form
+      - slot_was_set:
+          - requested_slot: pizza_toppings
+      - intent: order
+        entities:
+          - pizza_topping: sausage
+          - pizza_topping: black olives
+      - slot_was_set:
+          - pizza_toppings:
+              - sausage
+              - black olives
+      - action: pizza_form
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: utter_submit
+      - intent: affirm
+      - action: utter_complete_order
+
+  - story: successful order 3
+    steps:
+      - intent: order
+        entities:
+          - pizza_size: small
+          - pizza_topping: onions
+          - pizza_topping: sausage
+      - slot_was_set:
+          - pizza_size: small
+      - slot_was_set:
+          - pizza_toppings:
+              - onions
+              - sausage
+      - action: utter_greet
+      - action: pizza_form
+      - active_loop: pizza_form
+      - slot_was_set:
+          - pizza_size: small
+      - slot_was_set:
+          - pizza_toppings:
+              - onions
+              - sausage
+      - slot_was_set:
+          - requested_slot: pizza_crust
+      - intent: order
+        entities:
+          - pizza_crust: thick
+      - slot_was_set:
+          - pizza_crust: thick
+      - action: pizza_form
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: utter_submit
+      - intent: affirm
+      - action: utter_complete_order

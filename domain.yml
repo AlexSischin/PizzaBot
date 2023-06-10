@@ -72,5 +72,5 @@ session_config:
 actions:
   - utter_greet
   - utter_submit
-  - utter_propose_help
   - utter_complete_order
+  - utter_propose_help

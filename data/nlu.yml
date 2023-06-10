@@ -88,6 +88,8 @@ nlu:
       - please do
       - count me in
       - Yes
+      - Correct
+      - Yeah
   - intent: refuse
     examples: |
       - no
@@ -158,6 +160,12 @@ nlu:
       - [Large]{"entity": "pizza_size", "value": "large"}
       - [Thin]{"entity": "pizza_crust", "value": "thin"}
       - [Pepperoni]{"entity": "pizza_topping", "value": "pepperoni"}, [onions](pizza_topping) and [cheese](pizza_topping)
+      - I want to buy a pizza
+      - [Medium]{"entity": "pizza_size", "value": "medium"} size
+      - A [thick](pizza_crust) one
+      - Some [sausage](pizza_topping) and [olives]{"entity": "pizza_topping", "value": "black olives"}, I think
+      - Hello, I want a [small](pizza_size) pizza with a lot of [onions](pizza_topping) and a [sausage](pizza_topping)
+      - A [thick](pizza_crust) one
   - intent: multi_order
     examples: |
       - I want two pizzas: a big and a small one
@@ -168,6 +176,7 @@ nlu:
   - synonym: large
     examples: |
       - big
+      - Large
   - synonym: ham
     examples: |
       - canadian bacon
@@ -179,6 +188,15 @@ nlu:
       - peppers
       - green peppers
       - bell peppers
+  - synonym: thin
+    examples: |
+      - Thin
+  - synonym: pepperoni
+    examples: |
+      - Pepperoni
+  - synonym: medium
+    examples: |
+      - Medium
   - synonym: mushrooms
     examples: |
       - mushroom
