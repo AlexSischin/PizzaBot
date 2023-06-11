@@ -90,6 +90,7 @@ nlu:
       - Yes
       - Correct
       - Yeah
+      - Indeed
   - intent: refuse
     examples: |
       - no
@@ -165,7 +166,8 @@ nlu:
       - A [thick](pizza_crust) one
       - Some [sausage](pizza_topping) and [olives]{"entity": "pizza_topping", "value": "black olives"}, I think
       - Hello, I want a [small](pizza_size) pizza with a lot of [onions](pizza_topping) and a [sausage](pizza_topping)
-      - A [thick](pizza_crust) one
+      - A [large](pizza_size) pizza, please
+      - [Thick]{"entity": "pizza_crust", "value": "thick"}. The toppings are: [mushrooms](pizza_topping), [bacon](pizza_topping) and [green olives](pizza_topping), I think
   - intent: multi_order
     examples: |
       - I want two pizzas: a big and a small one

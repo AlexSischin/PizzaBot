@@ -139,3 +139,38 @@ stories:
       - action: utter_submit
       - intent: affirm
       - action: utter_complete_order
+
+  - story: successful order 4
+    steps:
+      - intent: order
+        entities:
+          - pizza_size: large
+      - slot_was_set:
+          - pizza_size: large
+      - action: utter_greet
+      - action: pizza_form
+      - active_loop: pizza_form
+      - slot_was_set:
+          - pizza_size: large
+      - slot_was_set:
+          - requested_slot: pizza_crust
+      - intent: order
+        entities:
+          - pizza_crust: thick
+          - pizza_topping: mushrooms
+          - pizza_topping: bacon
+          - pizza_topping: green olives
+      - slot_was_set:
+          - pizza_crust: thick
+      - slot_was_set:
+          - pizza_toppings:
+              - mushrooms
+              - bacon
+              - green olives
+      - action: pizza_form
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: utter_submit
+      - intent: affirm
+      - action: utter_complete_order
