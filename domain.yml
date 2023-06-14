@@ -1,76 +1,73 @@
 version: '3.1'
 intents:
-- affirm
-- bot_challenge
-- goodbye
-- greet
-- multi_order
-- order
-- refuse
+  - affirm
+  - bot_challenge
+  - goodbye
+  - greet
+  - multi_order
+  - order
+  - refuse
 entities:
-- pizza_topping
-- pizza_size
-- pizza_crust
+  - pizza_topping
+  - pizza_size
+  - pizza_crust
 slots:
   pizza_size:
     type: text
     mappings:
-    - type: from_entity
-      entity: pizza_size
+      - type: from_entity
+        entity: pizza_size
   pizza_crust:
     type: text
     mappings:
-    - type: from_entity
-      entity: pizza_crust
+      - type: from_entity
+        entity: pizza_crust
   pizza_toppings:
     type: list
     mappings:
-    - type: from_entity
-      entity: pizza_topping
+      - type: from_entity
+        entity: pizza_topping
 forms:
   pizza_form:
     required_slots:
-    - pizza_size
-    - pizza_crust
-    - pizza_toppings
+      - pizza_size
+      - pizza_crust
+      - pizza_toppings
 responses:
   utter_greet:
-  - text: Hello
-  - text: Hi
+    - text: Hello
+    - text: Hi
   utter_goodbye:
-  - text: Bye
+    - text: Bye
   utter_iamabot:
-  - text: I am an AI assistant, and my purpose is to provide humans with pizza
-  - text: I am an AI assistant and unfortunately, I can't eat pizza, but I can give you some!
+    - text: I am an AI assistant, and my purpose is to provide humans with pizza
+    - text: I am an AI assistant and unfortunately, I can't eat pizza, but I can give you some!
   utter_propose_help:
-  - text: How can I assist you?
-  - text: How can I help you?
+    - text: How can I assist you?
+    - text: How can I help you?
   utter_multi_order:
-  - text: Please, specify a single order at a time, so things don't get messed up.
+    - text: Please, specify a single order at a time, so things don't get messed up.
   utter_refuse_order:
-  - text: Sure, text me if you change your mind
-  - text: Okay, I'll be waiting you back
+    - text: Sure, text me if you change your mind
+    - text: Okay, I'll be waiting you back
   utter_ask_pizza_size:
-  - text: What size would you like?
+    - text: What size would you like?
   utter_ask_pizza_crust:
-  - text: What crust would you like?
+    - text: What crust would you like?
   utter_ask_pizza_toppings:
-  - text: What toppings do you want?
+    - text: What toppings do you want?
   utter_submit:
-  - text: |
-      Good! Your order:
-      - {pizza_size}
-      - {pizza_crust}
-      - {pizza_toppings}
-      Is everything correct?
+    - text: |
+        Good! Your order:
+        - {pizza_size}
+        - {pizza_crust}
+        - {pizza_toppings}
+        Is everything correct?
   utter_complete_order:
-  - text: Your order was placed. Enjoy!
-  - text: Done!
+    - text: Your order was placed. Enjoy!
+    - text: Done!
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 actions:
-- utter_submit
-- utter_greet
-- utter_complete_order
-- utter_propose_help
+  - validate_pizza_form
